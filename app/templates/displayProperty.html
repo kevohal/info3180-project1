@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block main %}
+
+
+<div class="card">
+    <div> 
+        <h1>Properties</h1>
+    </div>
+    <div>
+        <img class="image" src="{{ url_for('get_uploaded_images', filename=properties.photo) }}">
+        <div class="content">
+            <div class="propertytitle">{{ properties.title }}</div>
+            <div class="location">
+                <!-- <img class="" src="{{ url_for('static', filename='') }}"> -->
+                {{ properties.location }}
+
+            </div>
+            <div>
+                ${{ properties.price}}
+            </div>
+        </div>
+        <a href="{{ url_for('onePropertyView', propertyid=properties.id) }}" class="btn btn-primary">View Property</a>
+
+    </div>
+</div>
+
+{% endblock %}
